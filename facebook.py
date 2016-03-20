@@ -1,10 +1,15 @@
+## Analyze who are the top4 most friends on my facebook whom I messaged to and who messaged me
 import sys
 import time
 from bs4 import BeautifulSoup, SoupStrainer
 from leada_util import *
 
 MY_NAME = "Ankita Jain"
+# Discard threads which has more than 4 people in coversation
 max_people_per_convo = 4
+
+# Downloaded message achive from facebook and now read message.html
+# Top most filter is threads and then message and user 
 
 with open('html/messages.htm','r') as message_file:
 	messages_htm = message_file.read()
